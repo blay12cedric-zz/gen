@@ -1,0 +1,11 @@
+2017-07-17-main--INFO -AddonGenerator:----- Create AddonGenerator Object -----
+2017-07-17-main--INFO -LoadProperties:----- Object Properties created -----
+2017-07-17-main--FATAL-AddonGenerator:----- Fill/Verify the Content of generator.properties -----
+java.lang.NullPointerException: Addon
+	at AddonGenerator.extractAddonProperties(AddonGenerator.java:329)
+	at AddonGenerator.Run(AddonGenerator.java:68)
+	at AddonGenerator.main(AddonGenerator.java:54)
+2017-07-17-main--FATAL-AddonGenerator:----- Fill/Verify the Content of generator.properties -----
+java.lang.NullPointerException: Addon
+	at AddonGenerator.Run(AddonGenerator.java:156)
+	at AddonGenerator.main(AddonGenerator.java:54)
