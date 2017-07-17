@@ -41,7 +41,7 @@ public class LoadProperties {
             properties = new Properties();
             stream = LoadProperties.class.getResourceAsStream("generator.properties");
             properties.load(stream);
-            LOGGER.log(Level.INFO, "....................................................................");
+            LOGGER.log(Level.INFO, "----- Object Properties created -----");
         }
         return properties;
     }

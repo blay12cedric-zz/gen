@@ -152,12 +152,12 @@ public class AddonGenerator {
                 }
 
             }else{
-                LOGGER.log(Level.FATAL, "..............................................",
+                LOGGER.log(Level.FATAL, "----- Fill/Verify the Content of generator.properties -----",
                         new NullPointerException(Addon.class.getSimpleName()));
             }
 
         } catch (IOException e) {
-            LOGGER.log(Level.FATAL, "..............................................", e);
+            LOGGER.log(Level.FATAL, e.getMessage(), e);
         }
     }
 
@@ -192,7 +192,7 @@ public class AddonGenerator {
         if (!fileExtension.equals("png"))
             file1.delete();
 
-        LOGGER.log(Level.INFO, ".........................................................");
+        LOGGER.log(Level.INFO, "----- Move File "+file1+" to "+file2+" -----");
         return true;
     }
 
@@ -208,7 +208,7 @@ public class AddonGenerator {
         File dir = new File(parentName+"/"+childName);
         dir.mkdirs();
 
-        LOGGER.log(Level.INFO, ".........................................................");
+        LOGGER.log(Level.INFO, "----- Directory "+parentName+"/"+childName+" -----");
         return true;
     }
 
@@ -230,7 +230,7 @@ public class AddonGenerator {
         writer.flush();
         writer.close();
 
-        LOGGER.log(Level.INFO, ".........................................................");
+        LOGGER.log(Level.INFO, "----- File "+fileName+"."+fileExtension+" -----");
         return true;
     }
 
@@ -257,7 +257,7 @@ public class AddonGenerator {
         context.put("nbversion", addon.getNbversion());
         context.put("nfversion", addon.getNfversion());
 
-        LOGGER.log(Level.INFO, ".........................................................");
+        LOGGER.log(Level.INFO, "----- Generate the Context contained the Addon properties -----");
         return context;
     }
 
@@ -321,10 +321,11 @@ public class AddonGenerator {
                 addon.setUseOtherFiles(true);
             }
 
-            LOGGER.log(Level.INFO, ".........................................................");
+            LOGGER.log(Level.INFO, "----- Addon properties are extracted -----");
             return addon;
         }
-        LOGGER.log(Level.FATAL, ".........................................................",
+
+        LOGGER.log(Level.FATAL, "----- Fill/Verify the Content of generator.properties -----",
                 new NullPointerException(Addon.class.getSimpleName()));
 
         return addon;
@@ -339,7 +340,7 @@ public class AddonGenerator {
 
         if (generator == null){
             generator = new AddonGenerator();
-            LOGGER.log(Level.INFO, "...................................................................");
+            LOGGER.log(Level.INFO, "----- Create AddonGenerator Object -----");
         }
 
         return generator;

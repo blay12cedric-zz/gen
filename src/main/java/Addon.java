@@ -45,7 +45,7 @@ public class Addon {
         this.useLib = false;
         this.useHelpFile = false;
         this.useOtherFiles = false;
-        LOGGER.log(Level.INFO, "T...............................................................");
+        LOGGER.log(Level.INFO, "----- Object Addon created -----");
     }
 
     public String getName() {
