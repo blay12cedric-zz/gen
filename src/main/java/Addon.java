@@ -17,11 +17,14 @@
  */
 
 
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.apache.log4j.Priority;
 
 /**
  * Created by Cedric Achi on 14/07/2017.
+ * @author Cedric Achi
+ * @version 01 - Alpha
+ * @since 17/07/2017
  */
 public class Addon {
 
@@ -42,6 +45,7 @@ public class Addon {
         this.useLib = false;
         this.useHelpFile = false;
         this.useOtherFiles = false;
+        LOGGER.log(Level.INFO, "T...............................................................");
     }
 
     public String getName() {

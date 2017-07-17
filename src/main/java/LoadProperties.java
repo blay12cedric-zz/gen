@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
@@ -24,6 +25,9 @@ import java.util.Properties;
 
 /**
  * Created by Cedric Achi on 13/07/2017.
+ * @author Cedric Achi
+ * @version 01 - Alpha
+ * @since 17/07/2017
  */
 public class LoadProperties {
 
@@ -37,6 +41,7 @@ public class LoadProperties {
             properties = new Properties();
             stream = LoadProperties.class.getResourceAsStream("generator.properties");
             properties.load(stream);
+            LOGGER.log(Level.INFO, "....................................................................");
         }
         return properties;
     }

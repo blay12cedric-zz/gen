@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
@@ -27,7 +28,9 @@ import java.util.Properties;
 
 /**
  * Created by Cedric Achi on 13/07/2017.
- * @
+ * @author Cedric Achi
+ * @version 01 - Alpha
+ * @since 17/07/2017
  */
 public class AddonGenerator {
 
@@ -46,15 +49,13 @@ public class AddonGenerator {
     private VelocityEngine engine = null;
     private static AddonGenerator generator = null;
 
-    /**Main method
-     *
-     * @param args
-     */
+
     public static void main(String[] args) {
         AddonGenerator.getInstance().Run();
     }
 
-    /**
+    /**Run
+     * This method contains instructions executed to generate the Addon...
      *
      */
     public void Run(){
@@ -151,11 +152,12 @@ public class AddonGenerator {
                 }
 
             }else{
-                //TODO Log Writer...........................
+                LOGGER.log(Level.FATAL, "..............................................",
+                        new NullPointerException(Addon.class.getSimpleName()));
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.log(Level.FATAL, "..............................................", e);
         }
     }
 
@@ -190,6 +192,7 @@ public class AddonGenerator {
         if (!fileExtension.equals("png"))
             file1.delete();
 
+        LOGGER.log(Level.INFO, ".........................................................");
         return true;
     }
 
@@ -205,6 +208,7 @@ public class AddonGenerator {
         File dir = new File(parentName+"/"+childName);
         dir.mkdirs();
 
+        LOGGER.log(Level.INFO, ".........................................................");
         return true;
     }
 
@@ -226,6 +230,7 @@ public class AddonGenerator {
         writer.flush();
         writer.close();
 
+        LOGGER.log(Level.INFO, ".........................................................");
         return true;
     }
 
@@ -252,6 +257,7 @@ public class AddonGenerator {
         context.put("nbversion", addon.getNbversion());
         context.put("nfversion", addon.getNfversion());
 
+        LOGGER.log(Level.INFO, ".........................................................");
         return context;
     }
 
@@ -315,8 +321,11 @@ public class AddonGenerator {
                 addon.setUseOtherFiles(true);
             }
 
+            LOGGER.log(Level.INFO, ".........................................................");
             return addon;
         }
+        LOGGER.log(Level.FATAL, ".........................................................",
+                new NullPointerException(Addon.class.getSimpleName()));
 
         return addon;
     }
@@ -330,6 +339,7 @@ public class AddonGenerator {
 
         if (generator == null){
             generator = new AddonGenerator();
+            LOGGER.log(Level.INFO, "...................................................................");
         }
 
         return generator;
