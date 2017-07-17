@@ -1,5 +1,5 @@
 # gen
-Basic Zap Addon Project build with Maven
+Basic Zap Addon Generator Project build with Maven
 
 ## How it works ?
 
