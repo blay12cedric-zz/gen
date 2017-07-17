@@ -16,6 +16,7 @@
  * limitations under the License.
  */
 
+import org.apache.log4j.Logger;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
@@ -37,6 +38,8 @@ public class AddonGenerator {
     private static final String HS_FILE_EXTENSION = "hs";
     private static final String HTML_FILE_EXTENSION = "html";
     private static final String PNG_FILE_EXTENSION = "png";
+
+    private static final Logger LOGGER = Logger.getLogger(AddonGenerator.class);
 
     private Addon addon = null;
     private VelocityContext context = null;

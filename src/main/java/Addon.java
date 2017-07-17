@@ -17,6 +17,8 @@
  */
 
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.Priority;
 
 /**
  * Created by Cedric Achi on 14/07/2017.
@@ -34,6 +36,7 @@ public class Addon {
     private boolean useLib;
     private boolean useHelpFile;
     private boolean useOtherFiles;
+    private static final Logger LOGGER = Logger.getLogger(Addon.class);
 
     public Addon(){
         this.useLib = false;

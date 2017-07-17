@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+import org.apache.log4j.Logger;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -26,6 +28,7 @@ import java.util.Properties;
 public class LoadProperties {
 
     private static Properties properties;
+    private static final Logger LOGGER = Logger.getLogger(LoadProperties.class);
 
     public static Properties getInstance() throws IOException {
         InputStream stream;
