@@ -1,11 +1,10 @@
-2017-07-17-main--INFO -AddonGenerator:----- Create AddonGenerator Object -----
-2017-07-17-main--INFO -LoadProperties:----- Object Properties created -----
-2017-07-17-main--FATAL-AddonGenerator:----- Fill/Verify the Content of generator.properties -----
-java.lang.NullPointerException: Addon
-	at AddonGenerator.extractAddonProperties(AddonGenerator.java:329)
-	at AddonGenerator.Run(AddonGenerator.java:68)
-	at AddonGenerator.main(AddonGenerator.java:54)
-2017-07-17-main--FATAL-AddonGenerator:----- Fill/Verify the Content of generator.properties -----
-java.lang.NullPointerException: Addon
-	at AddonGenerator.Run(AddonGenerator.java:156)
-	at AddonGenerator.main(AddonGenerator.java:54)
+2017-07-19 17:21:20,058 |  INFO | AddonGenerator.java | 343 | ----- Create AddonGenerator Object -----
+2017-07-19 17:21:20,230 |  INFO | LoadProperties.java | 44 | ----- Object Properties created -----
+2017-07-19 17:21:20,230 |  INFO | Addon.java | 48 | ----- Object Addon created -----
+2017-07-19 17:21:20,231 |  INFO | AddonGenerator.java | 324 | ----- Addon properties are extracted -----
+2017-07-19 17:21:20,233 |  INFO | AddonGenerator.java | 260 | ----- Generate the Context contained the Addon properties -----
+2017-07-19 17:21:20,235 |  INFO | AddonGenerator.java | 211 | ----- Directory Output/cedric/resources -----
+2017-07-19 17:21:20,283 |  INFO | AddonGenerator.java | 233 | ----- File Cedric.java -----
+2017-07-19 17:21:20,286 |  INFO | AddonGenerator.java | 233 | ----- File ZapAddOn.xml -----
+2017-07-19 17:21:20,289 |  INFO | AddonGenerator.java | 195 | ----- Move File Cedric.java to Output\cedric\Cedric.java -----
+2017-07-19 17:21:20,290 |  INFO | AddonGenerator.java | 195 | ----- Move File ZapAddOn.xml to Output\cedric\ZapAddOn.xml -----
