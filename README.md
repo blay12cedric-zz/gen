@@ -11,4 +11,4 @@ Basic Zap Addon Generator Project build with Maven
 2/ Build and Run the project gen
 
 3/ Your Addon and his content will be generate and locate in:
-./src/../../${addon.name}
+Output/
