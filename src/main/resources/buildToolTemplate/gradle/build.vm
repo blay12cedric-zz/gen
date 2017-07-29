@@ -1,5 +1,15 @@
 apply plugin: 'java'
 
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+}
+    resources {
+        srcDirs = ['resources']
+        }
+    }
+}
 
 repositories {
     mavenCentral()
@@ -7,9 +17,9 @@ repositories {
 
 dependencies {
     compile 'org.zaproxy:zap:2.6.0'
-    testCompile "junit:junit:4.12"
+    testCompile 'junit:junit:4.12'
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '4.0.2'
+    gradleVersion = '3.3'
 }

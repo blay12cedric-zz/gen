@@ -15,6 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package domain;
 
 
 import org.apache.log4j.Level;
@@ -39,13 +40,15 @@ public class Addon {
     private boolean useLib;
     private boolean useHelpFile;
     private boolean useOtherFiles;
+    private BuildTool buildTool;
     private static final Logger LOGGER = Logger.getLogger(Addon.class);
 
     public Addon(){
         this.useLib = false;
         this.useHelpFile = false;
         this.useOtherFiles = false;
-        LOGGER.log(Level.INFO, "----- Object Addon created -----");
+        this.buildTool = BuildTool.getBuildToolList().get(0);
+        LOGGER.log(Level.INFO, "----- Object domain.Addon created -----");
     }
 
     public String getName() {
@@ -128,6 +131,14 @@ public class Addon {
         this.packageName = packageName;
     }
 
+    public BuildTool getBuildTool() {
+        return buildTool;
+    }
+
+    public void setBuildTool(BuildTool buildTool) {
+        this.buildTool = buildTool;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -138,12 +149,29 @@ public class Addon {
         if (useLib != addon.useLib) return false;
         if (useHelpFile != addon.useHelpFile) return false;
         if (useOtherFiles != addon.useOtherFiles) return false;
-        if (name != null ? !name.equals(addon.name) : addon.name != null) return false;
+        if (!name.equals(addon.name)) return false;
+        if (packageName != null ? !packageName.equals(addon.packageName) : addon.packageName != null) return false;
         if (description != null ? !description.equals(addon.description) : addon.description != null) return false;
         if (author != null ? !author.equals(addon.author) : addon.author != null) return false;
         if (url != null ? !url.equals(addon.url) : addon.url != null) return false;
-        if (nbversion != null ? !nbversion.equals(addon.nbversion) : addon.nbversion != null) return false;
-        return nfversion != null ? nfversion.equals(addon.nfversion) : addon.nfversion == null;
+        if (!nbversion.equals(addon.nbversion)) return false;
+        if (nfversion != null ? !nfversion.equals(addon.nfversion) : addon.nfversion != null) return false;
+        return buildTool != null ? buildTool.equals(addon.buildTool) : addon.buildTool == null;
     }
 
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + (packageName != null ? packageName.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (author != null ? author.hashCode() : 0);
+        result = 31 * result + (url != null ? url.hashCode() : 0);
+        result = 31 * result + nbversion.hashCode();
+        result = 31 * result + (nfversion != null ? nfversion.hashCode() : 0);
+        result = 31 * result + (useLib ? 1 : 0);
+        result = 31 * result + (useHelpFile ? 1 : 0);
+        result = 31 * result + (useOtherFiles ? 1 : 0);
+        result = 31 * result + (buildTool != null ? buildTool.hashCode() : 0);
+        return result;
+    }
 }

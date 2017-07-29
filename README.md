@@ -1,7 +1,7 @@
 
-# ZAP Addon Generator
+# ZAP domain.Addon Generator
 
-Basic Zap Addon Generator Project build with Maven
+Basic Zap domain.Addon Generator Project build with Maven
 
 ## How it works ?
 
@@ -10,5 +10,5 @@ Basic Zap Addon Generator Project build with Maven
 
 2/ Build and Run the project gen
 
-3/ Your Addon and his content will be generate and locate in:
+3/ Your domain.Addon and his content will be generate and locate in:
 ./src/../../${addon.name}

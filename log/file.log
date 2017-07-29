@@ -1,10 +1,26 @@
-2017-07-19 17:21:20,058 |  INFO | AddonGenerator.java | 343 | ----- Create AddonGenerator Object -----
-2017-07-19 17:21:20,230 |  INFO | LoadProperties.java | 44 | ----- Object Properties created -----
-2017-07-19 17:21:20,230 |  INFO | Addon.java | 48 | ----- Object Addon created -----
-2017-07-19 17:21:20,231 |  INFO | AddonGenerator.java | 324 | ----- Addon properties are extracted -----
-2017-07-19 17:21:20,233 |  INFO | AddonGenerator.java | 260 | ----- Generate the Context contained the Addon properties -----
-2017-07-19 17:21:20,235 |  INFO | AddonGenerator.java | 211 | ----- Directory Output/cedric/resources -----
-2017-07-19 17:21:20,283 |  INFO | AddonGenerator.java | 233 | ----- File Cedric.java -----
-2017-07-19 17:21:20,286 |  INFO | AddonGenerator.java | 233 | ----- File ZapAddOn.xml -----
-2017-07-19 17:21:20,289 |  INFO | AddonGenerator.java | 195 | ----- Move File Cedric.java to Output\cedric\Cedric.java -----
-2017-07-19 17:21:20,290 |  INFO | AddonGenerator.java | 195 | ----- Move File ZapAddOn.xml to Output\cedric\ZapAddOn.xml -----
+2017-07-28 14:51:44,674 |  INFO | AddonGenerator.java | 375 | Create AddonGenerator Object
+2017-07-28 14:51:44,818 |  INFO | LoadProperties.java | 44 | ----- Object Properties created -----
+2017-07-28 14:51:44,818 |  INFO | domain.Addon.java | 50 | ----- Object domain.Addon created -----
+2017-07-28 14:51:44,818 |  INFO | AddonGenerator.java | 355 | Extract our Add-on property and set them into our domain.Addon Object
+2017-07-28 14:51:44,831 |  INFO | AddonGenerator.java | 285 | Create a VelocityContext and add it our add-on details
+2017-07-28 14:51:44,834 |  INFO | AddonGenerator.java | 234 | ----- Directory Output/kevin/resources -----
+2017-07-28 14:51:44,842 |  INFO | AddonGenerator.java | 234 | ----- Directory Output/kevin/lib -----
+2017-07-28 14:51:44,842 |  INFO | AddonGenerator.java | 234 | ----- Directory Output/kevin/files -----
+2017-07-28 14:51:44,877 |  INFO | AddonGenerator.java | 257 | ----- File Kevin.java -----
+2017-07-28 14:51:44,880 |  INFO | AddonGenerator.java | 257 | ----- File ZapAddOn.xml -----
+2017-07-28 14:51:44,883 |  INFO | AddonGenerator.java | 218 | ----- Move File Kevin.java to Output\kevin\Kevin.java -----
+2017-07-28 14:51:44,886 |  INFO | AddonGenerator.java | 218 | ----- Move File ZapAddOn.xml to Output\kevin\ZapAddOn.xml -----
+2017-07-28 14:51:44,887 |  INFO | AddonGenerator.java | 234 | ----- Directory Output/kevin/resources/help -----
+2017-07-28 14:51:44,887 |  INFO | AddonGenerator.java | 234 | ----- Directory Output/kevin/resources/help/contents -----
+2017-07-28 14:51:44,887 |  INFO | AddonGenerator.java | 234 | ----- Directory Output/kevin/resources/help/contents/images -----
+2017-07-28 14:51:44,892 |  INFO | AddonGenerator.java | 257 | ----- File kevin.html -----
+2017-07-28 14:51:44,896 |  INFO | AddonGenerator.java | 218 | ----- Move File kevin.html to Output\kevin\resources\help\contents\kevin.html -----
+2017-07-28 14:51:44,899 |  INFO | AddonGenerator.java | 257 | ----- File map.jhm -----
+2017-07-28 14:51:44,901 |  INFO | AddonGenerator.java | 218 | ----- Move File map.jhm to Output\kevin\resources\help\map.jhm -----
+2017-07-28 14:51:44,904 |  INFO | AddonGenerator.java | 257 | ----- File helpset.hs -----
+2017-07-28 14:51:44,906 |  INFO | AddonGenerator.java | 218 | ----- Move File helpset.hs to Output\kevin\resources\help\helpset.hs -----
+2017-07-28 14:51:44,908 |  INFO | AddonGenerator.java | 257 | ----- File index.xml -----
+2017-07-28 14:51:44,911 |  INFO | AddonGenerator.java | 218 | ----- Move File index.xml to Output\kevin\resources\help\index.xml -----
+2017-07-28 14:51:44,915 |  INFO | AddonGenerator.java | 257 | ----- File toc.xml -----
+2017-07-28 14:51:44,917 |  INFO | AddonGenerator.java | 218 | ----- Move File toc.xml to Output\kevin\resources\help\toc.xml -----
+2017-07-28 14:51:44,933 |  INFO | AddonGenerator.java | 218 | ----- Move File cake.png to Output\kevin\resources\help\contents\images\cake.png -----

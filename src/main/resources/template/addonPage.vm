@@ -2,7 +2,7 @@
 <html>
     <Head>
         <title>
-            Addon: ${name}
+            domain.Addon: ${name}
         </title>
     </Head>
     <body BGCOLOR="#ffffff">
