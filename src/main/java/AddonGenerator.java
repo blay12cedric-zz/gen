@@ -51,6 +51,7 @@ public class AddonGenerator {
     private VelocityContext context = null;
     private VelocityEngine engine = null;
     private static AddonGenerator generator = null;
+    private File file = null;
 
 
     public static void main(String[] args) {
@@ -80,26 +81,120 @@ public class AddonGenerator {
                     case 1:
                         //Gradle used as Build Tool...
 
+                        //Create Addon Parent Directory and the other directories...
+                        //Create resources directory...
+                        //Create the Default i18n file named Messages.properties...
+                        AddonGenerator.getInstance().createDir("Output/" + addon.getPackageName() + "/src/main",
+                                "resources");
+                        file = new File("Output/" + addon.getPackageName() + "/src/main/resources/Messages.properties");
+                        file.createNewFile();
+
+                        //Create the Source Directory to store the java files...
+                        AddonGenerator.getInstance().createDir("Output/" + addon.getPackageName(),
+                                "src/main/java/org/zaproxy/zap/extension");
+
+                        //Create Other Files Directory...
+                        if (addon.isUseOtherFiles()) {
+                            AddonGenerator.getInstance().createDir("Output/" + addon.getPackageName(), "files");
+                        }
+
+                        //Generate the Addon Main Class...
+                        AddonGenerator.getInstance().generateFile(context, addon.getName(), "addonMainClass.vm",
+                                this.JAVA_FILE_EXTENSION);
+                        //move Java file...
+                        AddonGenerator.getInstance().moveFileToDir(addon.getName(), "Output/" + addon.getPackageName() +
+                                        "src/main/java/org/zaproxy/zap/extension","java");
+
+                        //Generate Xml files...
+                        AddonGenerator.getInstance().generateFile(context, "ZapAddOn", "zapAddonDescFile.vm",
+                                this.XML_FILE_EXTENSION);
+                        //move XML file...
+                        AddonGenerator.getInstance().moveFileToDir("ZapAddOn", "Output/" + addon.getPackageName(),
+                                "xml");
+
+                        //Generate Help files directory and their files...
+                        AddonGenerator.getInstance().generateHelpFiles();
+
                         break;
 
                     case 2:
                         //Maven used as Build Tool...
+
+                        //Create Addon Parent Directory and the other directories...
+                        //Create resources directory...
+                        //Create the Default i18n file named Messages.properties...
+                        AddonGenerator.getInstance().createDir("Output/" + addon.getPackageName() + "/src/main",
+                                "resources");
+                        file = new File("Output/" + addon.getPackageName() + "/src/main/resources/Messages.properties");
+                        file.createNewFile();
+
+                        //Create the Source Directory to store the java files...
+                        AddonGenerator.getInstance().createDir("Output/" + addon.getPackageName(),
+                                "src/main/java/org/zaproxy/zap/extension");
+
+                        //Create Other Files Directory...
+                        if (addon.isUseOtherFiles()) {
+                            AddonGenerator.getInstance().createDir("Output/" + addon.getPackageName(), "files");
+                        }
+
+                        //Generate the Addon Main Class...
+                        AddonGenerator.getInstance().generateFile(context, addon.getName(), "addonMainClass.vm",
+                                this.JAVA_FILE_EXTENSION);
+                        //move Java file...
+                        AddonGenerator.getInstance().moveFileToDir(addon.getName(), "Output/" + addon.getPackageName() +
+                                "src/main/java/org/zaproxy/zap/extension","java");
+
+                        //Generate Xml files...
+                        AddonGenerator.getInstance().generateFile(context, "ZapAddOn", "zapAddonDescFile.vm",
+                                this.XML_FILE_EXTENSION);
+                        //move XML file...
+                        AddonGenerator.getInstance().moveFileToDir("ZapAddOn", "Output/" + addon.getPackageName(),
+                                "xml");
+
+                        //Generate Help files directory and their files...
+                        AddonGenerator.getInstance().generateHelpFiles();
 
                         break;
 
                     case 3:
                         //Ant + Ivy used as Build Tool...
 
+                        //Create Addon Parent Directory and the other directories...
+                        //Create resources directory...
+                        //Create the Default i18n file named Messages.properties...
+                        AddonGenerator.getInstance().createDir("Output/" + addon.getPackageName(), "resources");
+                        file = new File("Output/" + addon.getPackageName() + "/resources/Messages.properties");
+                        file.createNewFile();
+
+                        //Create Other Files Directory...
+                        if (addon.isUseOtherFiles()) {
+                            AddonGenerator.getInstance().createDir("Output/" + addon.getPackageName(), "files");
+                        }
+
+                        //Generate the Addon Main Class...
+                        AddonGenerator.getInstance().generateFile(context, addon.getName(), "addonMainClass.vm",
+                                this.JAVA_FILE_EXTENSION);
+                        //move Java file...
+                        AddonGenerator.getInstance().moveFileToDir(addon.getName(), "Output/" + addon.getPackageName() +
+                                "src","java");
+
+                        //Generate Xml files...
+                        AddonGenerator.getInstance().generateFile(context, "ZapAddOn", "zapAddonDescFile.vm",
+                                this.XML_FILE_EXTENSION);
+                        //move XML file...
+                        AddonGenerator.getInstance().moveFileToDir("ZapAddOn", "Output/" + addon.getPackageName(),
+                                "xml");
+
                         break;
 
                     default:
                         //No Build Tool defined...
 
-                        //Create domain.Addon Parent Directory and the other directories...
+                        //Create Addon Parent Directory and the other directories...
                         //Create resources directory...
                         //Create the Default i18n file named Messages.properties...
                         AddonGenerator.getInstance().createDir("Output/" + addon.getPackageName(), "resources");
-                        File file = new File("Output/" + addon.getPackageName() + "/resources/Messages.properties");
+                        file = new File("Output/" + addon.getPackageName() + "/resources/Messages.properties");
                         file.createNewFile();
 
                         //Create Libraries Directory...
@@ -112,7 +207,7 @@ public class AddonGenerator {
                             AddonGenerator.getInstance().createDir("Output/" + addon.getPackageName(), "files");
                         }
 
-                        //Generate the domain.Addon Main Class...
+                        //Generate the Addon Main Class...
                         AddonGenerator.getInstance().generateFile(context, addon.getName(), "addonMainClass.vm",
                                 this.JAVA_FILE_EXTENSION);
 
@@ -127,56 +222,56 @@ public class AddonGenerator {
                         //move XML file...
                         AddonGenerator.getInstance().moveFileToDir("ZapAddOn", "Output/" + addon.getPackageName(),
                                 "xml");
+                }
 
-                        //Create Help files Default Directory and its files...
-                        if (addon.isUseHelpFile()) {
-                            AddonGenerator.getInstance().createDir("Output/" + addon.getPackageName(), "resources/help");
+                //Create Help file Default Directory...
+                if (addon.isUseHelpFile()) {
+                    AddonGenerator.getInstance().createDir("Output/" + addon.getPackageName(), "resources/help");
 
-                            //Create Help files Directory...
-                            AddonGenerator.getInstance().createDir("Output/" + addon.getPackageName() + "/resources/help",
-                                    "contents");
-                            AddonGenerator.getInstance().createDir("Output/" + addon.getPackageName() + "/resources/help/contents",
-                                    "images");
+                    //Create Help files Directory...
+                    AddonGenerator.getInstance().createDir("Output/" + addon.getPackageName() + "/resources/help",
+                            "contents");
+                    AddonGenerator.getInstance().createDir("Output/" + addon.getPackageName() + "/resources/help/contents",
+                            "images");
 
-                            //Create Help Files and move them to Help Files Directory...
-                            //Generate HTML file and move it...
-                            AddonGenerator.getInstance().generateFile(context, addon.getPackageName(), "addonPage.vm",
-                                    this.HTML_FILE_EXTENSION);
-                            AddonGenerator.getInstance().moveFileToDir(addon.getPackageName(), "Output/" + addon.getPackageName()
-                                    + "/resources/help/contents", this.HTML_FILE_EXTENSION);
+                    //Create Help Files and move them to Help Files Directory...
+                    //Generate HTML file and move it...
+                    AddonGenerator.getInstance().generateFile(context, addon.getPackageName(), "addonPage.vm",
+                            this.HTML_FILE_EXTENSION);
+                    AddonGenerator.getInstance().moveFileToDir(addon.getPackageName(), "Output/" + addon.getPackageName()
+                            + "/resources/help/contents", this.HTML_FILE_EXTENSION);
 
-                            //Generate map File and move it...
-                            AddonGenerator.getInstance().generateFile(context, "map", "mapFile.vm",
-                                    this.MAP_FILE_EXTENSION);
-                            AddonGenerator.getInstance().moveFileToDir("map", "Output/" + addon.getPackageName()
-                                    + "/resources/help", this.MAP_FILE_EXTENSION);
+                    //Generate map File and move it...
+                    AddonGenerator.getInstance().generateFile(context, "map", "mapFile.vm",
+                            this.MAP_FILE_EXTENSION);
+                    AddonGenerator.getInstance().moveFileToDir("map", "Output/" + addon.getPackageName()
+                            + "/resources/help", this.MAP_FILE_EXTENSION);
 
-                            //Generate Helpset file and move it...
-                            AddonGenerator.getInstance().generateFile(context, "helpset", "helpset.vm",
-                                    this.HS_FILE_EXTENSION);
-                            AddonGenerator.getInstance().moveFileToDir("helpset", "Output/" + addon.getPackageName()
-                                    + "/resources/help", this.HS_FILE_EXTENSION);
+                    //Generate Helpset file and move it...
+                    AddonGenerator.getInstance().generateFile(context, "helpset", "helpset.vm",
+                            this.HS_FILE_EXTENSION);
+                    AddonGenerator.getInstance().moveFileToDir("helpset", "Output/" + addon.getPackageName()
+                            + "/resources/help", this.HS_FILE_EXTENSION);
 
-                            //Generate index File and move it...
-                            AddonGenerator.getInstance().generateFile(context, "index", "index.vm",
-                                    this.XML_FILE_EXTENSION);
-                            AddonGenerator.getInstance().moveFileToDir("index", "Output/" + addon.getPackageName()
-                                    + "/resources/help", this.XML_FILE_EXTENSION);
+                    //Generate index File and move it...
+                    AddonGenerator.getInstance().generateFile(context, "index", "index.vm",
+                            this.XML_FILE_EXTENSION);
+                    AddonGenerator.getInstance().moveFileToDir("index", "Output/" + addon.getPackageName()
+                            + "/resources/help", this.XML_FILE_EXTENSION);
 
-                            //Generate toc File and move it...
-                            AddonGenerator.getInstance().generateFile(context, "toc", "toc.vm",
-                                    this.XML_FILE_EXTENSION);
-                            AddonGenerator.getInstance().moveFileToDir("toc", "Output/" + addon.getPackageName()
-                                    + "/resources/help", this.XML_FILE_EXTENSION);
+                    //Generate toc File and move it...
+                    AddonGenerator.getInstance().generateFile(context, "toc", "toc.vm",
+                            this.XML_FILE_EXTENSION);
+                    AddonGenerator.getInstance().moveFileToDir("toc", "Output/" + addon.getPackageName()
+                            + "/resources/help", this.XML_FILE_EXTENSION);
 
-                            //Move Default domain.Addon Icon...
-                            AddonGenerator.getInstance().moveFileToDir("cake", "Output/" + addon.getPackageName()
-                                    + "/resources/help/contents/images", this.PNG_FILE_EXTENSION);
-                        }
+                    //Move Default Addon Icon...
+                    AddonGenerator.getInstance().moveFileToDir("cake", "Output/" + addon.getPackageName()
+                            + "/resources/help/contents/images", this.PNG_FILE_EXTENSION);
                 }
 
             }else{
-                LOGGER.log(Level.FATAL, "Verify if you fill generator.properties with your Add-on details",
+                LOGGER.log(Level.FATAL, "Verify if you fill the generator.properties with your Add-on details",
                         new NullPointerException(Addon.class.getName()));
             }
 
@@ -380,4 +475,67 @@ public class AddonGenerator {
 
         return generator;
     }
+
+    /**
+     * generateHelpFiles
+     * this method is used to generat Help files and their directories..
+     *
+     */
+    public void generateHelpFiles(){
+
+        //Create Help file Default Directory...
+        if (addon.isUseHelpFile()) {
+            AddonGenerator.getInstance().createDir("Output/" + addon.getPackageName()
+                    + "/src/main","resources/help");
+
+            //Create Help files Directory...
+            AddonGenerator.getInstance().createDir("Output/" + addon.getPackageName()
+                    + "/src/main/resources/help", "contents");
+            AddonGenerator.getInstance().createDir("Output/" + addon.getPackageName()
+                    + "/src/main/resources/help/contents","images");
+
+            //Create Help Files and move them to Help Files Directory...
+            //Generate HTML file and move it...
+            try {
+                AddonGenerator.getInstance().generateFile(context, addon.getPackageName(), "addonPage.vm",
+                        this.HTML_FILE_EXTENSION);
+                AddonGenerator.getInstance().moveFileToDir(addon.getPackageName(), "Output/" + addon.getPackageName()
+                        + "/src/main/resources/help/contents", this.HTML_FILE_EXTENSION);
+
+                //Generate map File and move it...
+                AddonGenerator.getInstance().generateFile(context, "map", "mapFile.vm",
+                        this.MAP_FILE_EXTENSION);
+                AddonGenerator.getInstance().moveFileToDir("map", "Output/" + addon.getPackageName()
+                        + "/src/main/resources/help", this.MAP_FILE_EXTENSION);
+
+                //Generate Helpset file and move it...
+                AddonGenerator.getInstance().generateFile(context, "helpset", "helpset.vm",
+                        this.HS_FILE_EXTENSION);
+                AddonGenerator.getInstance().moveFileToDir("helpset", "Output/" + addon.getPackageName()
+                        + "/src/main/resources/help", this.HS_FILE_EXTENSION);
+
+                //Generate index File and move it...
+                AddonGenerator.getInstance().generateFile(context, "index", "index.vm",
+                        this.XML_FILE_EXTENSION);
+                AddonGenerator.getInstance().moveFileToDir("index", "Output/" + addon.getPackageName()
+                        + "/src/main/resources/help", this.XML_FILE_EXTENSION);
+
+                //Generate toc File and move it...
+                AddonGenerator.getInstance().generateFile(context, "toc", "toc.vm",
+                        this.XML_FILE_EXTENSION);
+                AddonGenerator.getInstance().moveFileToDir("toc", "Output/" + addon.getPackageName()
+                        + "/src/main/resources/help", this.XML_FILE_EXTENSION);
+
+                //Move Default domain.Addon Icon...
+                AddonGenerator.getInstance().moveFileToDir("cake", "Output/" + addon.getPackageName()
+                        + "/src/main/resources/help/contents/images", this.PNG_FILE_EXTENSION);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+
 }

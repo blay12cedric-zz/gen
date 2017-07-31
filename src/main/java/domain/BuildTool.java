@@ -6,6 +6,7 @@ import java.util.HashMap;
  * Created by Cedric Achi on 29/07/2017.
  */
 public class BuildTool {
+    private static final String GRADLE_FILE_EXTENSION = "gradle";
 
     private int id;
     private String buildToolName;
