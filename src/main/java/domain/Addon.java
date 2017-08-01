@@ -40,15 +40,15 @@ public class Addon {
     private boolean useLib;
     private boolean useHelpFile;
     private boolean useOtherFiles;
-    private BuildTool buildTool;
+    private BuildTools buildTool;
     private static final Logger LOGGER = Logger.getLogger(Addon.class);
 
     public Addon(){
         this.useLib = false;
         this.useHelpFile = false;
         this.useOtherFiles = false;
-        this.buildTool = BuildTool.getBuildToolList().get(0);
-        LOGGER.log(Level.INFO, "----- Object domain.Addon created -----");
+        this.buildTool = BuildTools.DEFAULT;
+        LOGGER.log(Level.INFO, "Create Addon Object");
     }
 
     public String getName() {
@@ -131,11 +131,11 @@ public class Addon {
         this.packageName = packageName;
     }
 
-    public BuildTool getBuildTool() {
+    public BuildTools getBuildTool() {
         return buildTool;
     }
 
-    public void setBuildTool(BuildTool buildTool) {
+    public void setBuildTool(BuildTools buildTool) {
         this.buildTool = buildTool;
     }
 
@@ -156,7 +156,7 @@ public class Addon {
         if (url != null ? !url.equals(addon.url) : addon.url != null) return false;
         if (!nbversion.equals(addon.nbversion)) return false;
         if (nfversion != null ? !nfversion.equals(addon.nfversion) : addon.nfversion != null) return false;
-        return buildTool != null ? buildTool.equals(addon.buildTool) : addon.buildTool == null;
+        return buildTool == addon.buildTool;
     }
 
     @Override
@@ -171,7 +171,29 @@ public class Addon {
         result = 31 * result + (useLib ? 1 : 0);
         result = 31 * result + (useHelpFile ? 1 : 0);
         result = 31 * result + (useOtherFiles ? 1 : 0);
-        result = 31 * result + (buildTool != null ? buildTool.hashCode() : 0);
+        result = 31 * result + buildTool.hashCode();
         return result;
+    }
+
+    public static BuildTools getBuildToolById(int id){
+        BuildTools tools = null;
+
+        switch (id){
+            case 1:
+                tools = BuildTools.GRADLE;
+                break;
+
+            case 2:
+                tools = BuildTools.MAVEN;
+                break;
+
+            case 3:
+                tools = BuildTools.ANTIVY;
+                break;
+
+            default:
+                tools = BuildTools.DEFAULT;
+        }
+        return tools;
     }
 }

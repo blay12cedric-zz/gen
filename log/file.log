@@ -1,26 +1,28 @@
-2017-07-28 14:51:44,674 |  INFO | AddonGenerator.java | 375 | Create AddonGenerator Object
-2017-07-28 14:51:44,818 |  INFO | LoadProperties.java | 44 | ----- Object Properties created -----
-2017-07-28 14:51:44,818 |  INFO | domain.Addon.java | 50 | ----- Object domain.Addon created -----
-2017-07-28 14:51:44,818 |  INFO | AddonGenerator.java | 355 | Extract our Add-on property and set them into our domain.Addon Object
-2017-07-28 14:51:44,831 |  INFO | AddonGenerator.java | 285 | Create a VelocityContext and add it our add-on details
-2017-07-28 14:51:44,834 |  INFO | AddonGenerator.java | 234 | ----- Directory Output/kevin/resources -----
-2017-07-28 14:51:44,842 |  INFO | AddonGenerator.java | 234 | ----- Directory Output/kevin/lib -----
-2017-07-28 14:51:44,842 |  INFO | AddonGenerator.java | 234 | ----- Directory Output/kevin/files -----
-2017-07-28 14:51:44,877 |  INFO | AddonGenerator.java | 257 | ----- File Kevin.java -----
-2017-07-28 14:51:44,880 |  INFO | AddonGenerator.java | 257 | ----- File ZapAddOn.xml -----
-2017-07-28 14:51:44,883 |  INFO | AddonGenerator.java | 218 | ----- Move File Kevin.java to Output\kevin\Kevin.java -----
-2017-07-28 14:51:44,886 |  INFO | AddonGenerator.java | 218 | ----- Move File ZapAddOn.xml to Output\kevin\ZapAddOn.xml -----
-2017-07-28 14:51:44,887 |  INFO | AddonGenerator.java | 234 | ----- Directory Output/kevin/resources/help -----
-2017-07-28 14:51:44,887 |  INFO | AddonGenerator.java | 234 | ----- Directory Output/kevin/resources/help/contents -----
-2017-07-28 14:51:44,887 |  INFO | AddonGenerator.java | 234 | ----- Directory Output/kevin/resources/help/contents/images -----
-2017-07-28 14:51:44,892 |  INFO | AddonGenerator.java | 257 | ----- File kevin.html -----
-2017-07-28 14:51:44,896 |  INFO | AddonGenerator.java | 218 | ----- Move File kevin.html to Output\kevin\resources\help\contents\kevin.html -----
-2017-07-28 14:51:44,899 |  INFO | AddonGenerator.java | 257 | ----- File map.jhm -----
-2017-07-28 14:51:44,901 |  INFO | AddonGenerator.java | 218 | ----- Move File map.jhm to Output\kevin\resources\help\map.jhm -----
-2017-07-28 14:51:44,904 |  INFO | AddonGenerator.java | 257 | ----- File helpset.hs -----
-2017-07-28 14:51:44,906 |  INFO | AddonGenerator.java | 218 | ----- Move File helpset.hs to Output\kevin\resources\help\helpset.hs -----
-2017-07-28 14:51:44,908 |  INFO | AddonGenerator.java | 257 | ----- File index.xml -----
-2017-07-28 14:51:44,911 |  INFO | AddonGenerator.java | 218 | ----- Move File index.xml to Output\kevin\resources\help\index.xml -----
-2017-07-28 14:51:44,915 |  INFO | AddonGenerator.java | 257 | ----- File toc.xml -----
-2017-07-28 14:51:44,917 |  INFO | AddonGenerator.java | 218 | ----- Move File toc.xml to Output\kevin\resources\help\toc.xml -----
-2017-07-28 14:51:44,933 |  INFO | AddonGenerator.java | 218 | ----- Move File cake.png to Output\kevin\resources\help\contents\images\cake.png -----
+2017-08-01 01:21:27,026 |  INFO | AddonGenerator.java | 447 | Create AddonGenerator Object
+2017-08-01 01:21:27,197 |  INFO | LoadProperties.java | 44 | Create Properties Object
+2017-08-01 01:21:27,198 |  INFO | Addon.java | 51 | Create Addon Object
+2017-08-01 01:21:27,199 |  INFO | AddonGenerator.java | 427 | Extract our Add-on property and set them into our domain.Addon Object
+2017-08-01 01:21:27,202 |  INFO | AddonGenerator.java | 355 | Create a VelocityContext and add it our add-on details
+2017-08-01 01:21:27,204 |  INFO | AddonGenerator.java | 289 | Directory Output/terminator/src/main/resources was created
+2017-08-01 01:21:27,208 |  INFO | AddonGenerator.java | 289 | Directory Output/terminator/src/main/java/org/zaproxy/zap/extension was created
+2017-08-01 01:21:27,208 |  INFO | AddonGenerator.java | 289 | Directory Output/terminator/src/main/resources/files was created
+2017-08-01 01:21:27,239 |  INFO | AddonGenerator.java | 313 | The File Terminator.java was generated
+2017-08-01 01:21:27,241 |  INFO | AddonGenerator.java | 273 | Move File Terminator.java to Output\terminator\src\main\java\org\zaproxy\zap\extension\Terminator.java
+2017-08-01 01:21:27,244 |  INFO | AddonGenerator.java | 313 | The File ZapAddOn.xml was generated
+2017-08-01 01:21:27,247 |  INFO | AddonGenerator.java | 273 | Move File ZapAddOn.xml to Output\terminator\ZapAddOn.xml
+2017-08-01 01:21:27,248 |  INFO | AddonGenerator.java | 289 | Directory Output/terminator/src/main/resources/help was created
+2017-08-01 01:21:27,248 |  INFO | AddonGenerator.java | 289 | Directory Output/terminator/src/main/resources/help/contents was created
+2017-08-01 01:21:27,249 |  INFO | AddonGenerator.java | 289 | Directory Output/terminator/src/main/resources/help/contents/images was created
+2017-08-01 01:21:27,254 |  INFO | AddonGenerator.java | 313 | The File terminator.html was generated
+2017-08-01 01:21:27,258 |  INFO | AddonGenerator.java | 273 | Move File terminator.html to Output\terminator\src\main\resources\help\contents\terminator.html
+2017-08-01 01:21:27,260 |  INFO | AddonGenerator.java | 313 | The File map.jhm was generated
+2017-08-01 01:21:27,263 |  INFO | AddonGenerator.java | 273 | Move File map.jhm to Output\terminator\src\main\resources\help\map.jhm
+2017-08-01 01:21:27,266 |  INFO | AddonGenerator.java | 313 | The File helpset.hs was generated
+2017-08-01 01:21:27,268 |  INFO | AddonGenerator.java | 273 | Move File helpset.hs to Output\terminator\src\main\resources\help\helpset.hs
+2017-08-01 01:21:27,271 |  INFO | AddonGenerator.java | 313 | The File index.xml was generated
+2017-08-01 01:21:27,273 |  INFO | AddonGenerator.java | 273 | Move File index.xml to Output\terminator\src\main\resources\help\index.xml
+2017-08-01 01:21:27,280 |  INFO | AddonGenerator.java | 313 | The File toc.xml was generated
+2017-08-01 01:21:27,282 |  INFO | AddonGenerator.java | 273 | Move File toc.xml to Output\terminator\src\main\resources\help\toc.xml
+2017-08-01 01:21:27,284 |  INFO | AddonGenerator.java | 273 | Move File cake.png to Output\terminator\src\main\resources\help\contents\images\cake.png
+2017-08-01 01:21:27,287 |  INFO | AddonGenerator.java | 327 | Build Tool File pom1.xml was generated
+2017-08-01 01:21:27,289 |  INFO | AddonGenerator.java | 273 | Move File pom1.xml to Output\terminator\pom1.xml
