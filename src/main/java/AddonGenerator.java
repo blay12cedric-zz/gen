@@ -190,6 +190,15 @@ public class AddonGenerator {
                         AddonGenerator.getInstance().moveFileToDir("ZapAddOn", "Output/" + addon.getPackageName(),
                                 FileType.XML_FILE_EXTENSION.getFileExtension());
 
+                        //Generate the Help files...
+                        AddonGenerator.getInstance().generateHelpFiles(BuildTools.DEFAULT.getResourcesPathName());
+
+                        //Generate Maven Build Tool files and it...
+                        AddonGenerator.getInstance().generateBuildFile(context, "build", "build.vm",
+                                BuildTools.ANTIVY.getTemplateLocation(), FileType.XML_FILE_EXTENSION.getFileExtension());
+                        AddonGenerator.getInstance().moveFileToDir("build", "Output/" + addon.getPackageName(),
+                                FileType.XML_FILE_EXTENSION.getFileExtension());
+
                         break;
 
                     default:
