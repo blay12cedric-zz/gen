@@ -66,7 +66,7 @@ public class AddonGenerator {
         try {
             addon = AddonGenerator.getInstance().extractAddonProperties(LoadProperties.getInstance());
 
-            //Get the Context contained our domain.Addon Properties...
+            //Get the Context contained our Addon Properties...
             context = AddonGenerator.getInstance().generateContext(addon);
 
             if (addon != null) {
@@ -348,10 +348,6 @@ public class AddonGenerator {
     public VelocityContext generateContext(Addon addon) {
         VelocityContext context = new VelocityContext();
 
-        //Make UpperCase the first Character of our domain.Addon name to use it as Class name...
-        String car = String.valueOf((addon.getName().toString()).charAt(0)).toUpperCase();
-        addon.setName((car.concat(addon.getName().substring(1))));
-
         //Insert the Content of our properties file in VelocityContext Key/Value for our Template...
         context.put("name", addon.getName());
         context.put("pack", addon.getPackageName());
@@ -376,9 +372,13 @@ public class AddonGenerator {
         Addon addon = null;
 
         //Verify the Properties domain.Addon.name and domain.Addon.nbversion....
-        if (properties.getProperty("addon.name").length() != 0 && properties.getProperty("addon.nbversion").length() != 0) {
+        if (properties.getProperty("addon.name").length() != 0 && properties.getProperty("addon.nbversion").length() != 0
+                && !(formatAndVerifyAddonName(properties.getProperty("addon.name")).length() <= 0)) {
+
             addon = new Addon();
-            addon.setName(properties.getProperty("addon.name"));
+
+            //Format Addon Class name...
+            addon.setName(formatAndVerifyAddonName(properties.getProperty("addon.name")));
             addon.setPackageName(properties.getProperty("addon.name"));
 
             if (properties.getProperty("addon.description").length() != 0) {
@@ -437,7 +437,8 @@ public class AddonGenerator {
             return addon;
         }
 
-        LOGGER.log(Level.FATAL, "Verify if you fill generator.properties with your Add-on details",
+        LOGGER.log(Level.FATAL, "Verify if you fill generator.properties or verify if " +
+                        "your Addon.name does not contain a special Character",
                 new NullPointerException(Addon.class.getName()));
 
         return addon;
@@ -519,6 +520,43 @@ public class AddonGenerator {
 
         }
 
+    }
+
+    /**
+     * formatAndVerifyAddonName
+     * This method is used to delete all special characters contained on the Addon name...
+     * @param term
+     * @return
+     */
+    public String formatAndVerifyAddonName(String term){
+        boolean isSpecial = false;
+        StringBuilder builder = new StringBuilder();
+
+
+        for(int i = 0; i < term.toCharArray().length; i++){
+
+            if(i == 0)
+                isSpecial = true;
+
+            if((String.valueOf(term.charAt(i))).matches(".*[^A-Za-z].*")){
+                isSpecial = true;
+
+            }else{
+
+                if(isSpecial == true){
+                    builder.append(Character.toUpperCase(term.charAt(i)));
+                    isSpecial = false;
+
+                }else{
+                    builder.append(term.charAt(i));
+                }
+            }
+
+        }
+
+        String s = builder.toString();
+
+        return s;
     }
 
 }

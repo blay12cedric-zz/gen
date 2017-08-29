@@ -30,6 +30,7 @@ import org.apache.log4j.Logger;
 public class Addon {
 
     private String name;
+    private String className;
     private String packageName;
     private String description;
     private String author;
@@ -137,6 +138,14 @@ public class Addon {
 
     public void setBuildTool(BuildTools buildTool) {
         this.buildTool = buildTool;
+    }
+
+    private void setClassName(String className) {
+        this.className = className;
+    }
+
+    public String getClassName() {
+        return className;
     }
 
     @Override
