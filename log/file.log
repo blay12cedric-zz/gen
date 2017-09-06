@@ -1,28 +1,28 @@
-2017-08-29 15:16:12,771 |  INFO | AddonGenerator.java | 457 | Create AddonGenerator Object
-2017-08-29 15:16:12,931 |  INFO | LoadProperties.java | 44 | Create Properties Object
-2017-08-29 15:16:12,933 |  INFO | Addon.java | 52 | Create Addon Object
-2017-08-29 15:16:12,934 |  INFO | AddonGenerator.java | 436 | Extract our Add-on property and set them into our domain.Addon Object
-2017-08-29 15:16:12,936 |  INFO | AddonGenerator.java | 360 | Create a VelocityContext and add it our add-on details
-2017-08-29 15:16:12,942 |  INFO | AddonGenerator.java | 298 | Directory Output/Zap Addon/src/main/resources was created
-2017-08-29 15:16:12,949 |  INFO | AddonGenerator.java | 298 | Directory Output/Zap Addon/src/main/java/org/zaproxy/zap/extension was created
-2017-08-29 15:16:12,951 |  INFO | AddonGenerator.java | 298 | Directory Output/Zap Addon/src/main/resources/files was created
-2017-08-29 15:16:13,054 |  INFO | AddonGenerator.java | 322 | The File ZapAddon.java was generated
-2017-08-29 15:16:13,057 |  INFO | AddonGenerator.java | 282 | Move File ZapAddon.java to Output\Zap Addon\src\main\java\org\zaproxy\zap\extension\ZapAddon.java
-2017-08-29 15:16:13,062 |  INFO | AddonGenerator.java | 322 | The File ZapAddOn.xml was generated
-2017-08-29 15:16:13,067 |  INFO | AddonGenerator.java | 282 | Move File ZapAddOn.xml to Output\Zap Addon\ZapAddOn.xml
-2017-08-29 15:16:13,068 |  INFO | AddonGenerator.java | 298 | Directory Output/Zap Addon/src/main/resources/help was created
-2017-08-29 15:16:13,069 |  INFO | AddonGenerator.java | 298 | Directory Output/Zap Addon/src/main/resources/help/contents was created
-2017-08-29 15:16:13,070 |  INFO | AddonGenerator.java | 298 | Directory Output/Zap Addon/src/main/resources/help/contents/images was created
-2017-08-29 15:16:13,076 |  INFO | AddonGenerator.java | 322 | The File Zap Addon.html was generated
-2017-08-29 15:16:13,081 |  INFO | AddonGenerator.java | 282 | Move File Zap Addon.html to Output\Zap Addon\src\main\resources\help\contents\Zap Addon.html
-2017-08-29 15:16:13,085 |  INFO | AddonGenerator.java | 322 | The File map.jhm was generated
-2017-08-29 15:16:13,089 |  INFO | AddonGenerator.java | 282 | Move File map.jhm to Output\Zap Addon\src\main\resources\help\map.jhm
-2017-08-29 15:16:13,094 |  INFO | AddonGenerator.java | 322 | The File helpset.hs was generated
-2017-08-29 15:16:13,098 |  INFO | AddonGenerator.java | 282 | Move File helpset.hs to Output\Zap Addon\src\main\resources\help\helpset.hs
-2017-08-29 15:16:13,101 |  INFO | AddonGenerator.java | 322 | The File index.xml was generated
-2017-08-29 15:16:13,105 |  INFO | AddonGenerator.java | 282 | Move File index.xml to Output\Zap Addon\src\main\resources\help\index.xml
-2017-08-29 15:16:13,110 |  INFO | AddonGenerator.java | 322 | The File toc.xml was generated
-2017-08-29 15:16:13,114 |  INFO | AddonGenerator.java | 282 | Move File toc.xml to Output\Zap Addon\src\main\resources\help\toc.xml
-2017-08-29 15:16:13,122 |  INFO | AddonGenerator.java | 282 | Move File cake.png to Output\Zap Addon\src\main\resources\help\contents\images\cake.png
-2017-08-29 15:16:13,125 |  INFO | AddonGenerator.java | 336 | Build Tool File build.gradle was generated
-2017-08-29 15:16:13,128 |  INFO | AddonGenerator.java | 282 | Move File build.gradle to Output\Zap Addon\build.gradle
+2017-09-06 10:13:19,687 |  INFO | AddonGenerator.java | 457 | Create AddonGenerator Object
+2017-09-06 10:13:20,024 |  INFO | LoadProperties.java | 44 | Create Properties Object
+2017-09-06 10:13:20,026 |  INFO | Addon.java | 52 | Create Addon Object
+2017-09-06 10:13:20,027 |  INFO | AddonGenerator.java | 436 | Extract our Add-on property and set them into our domain.Addon Object
+2017-09-06 10:13:20,029 |  INFO | AddonGenerator.java | 360 | Create a VelocityContext and add it our add-on details
+2017-09-06 10:13:20,034 |  INFO | AddonGenerator.java | 298 | Directory output/Zap Addon/src/main/resources was created
+2017-09-06 10:13:20,041 |  INFO | AddonGenerator.java | 298 | Directory output/Zap Addon/src/main/java/org/zaproxy/zap/extension was created
+2017-09-06 10:13:20,041 |  INFO | AddonGenerator.java | 298 | Directory output/Zap Addon/src/main/resources/files was created
+2017-09-06 10:13:20,094 |  INFO | AddonGenerator.java | 322 | The File ZapAddon.java was generated
+2017-09-06 10:13:20,101 |  INFO | AddonGenerator.java | 282 | Move File ZapAddon.java to output\Zap Addon\src\main\java\org\zaproxy\zap\extension\ZapAddon.java
+2017-09-06 10:13:20,111 |  INFO | AddonGenerator.java | 322 | The File ZapAddOn.xml was generated
+2017-09-06 10:13:20,119 |  INFO | AddonGenerator.java | 282 | Move File ZapAddOn.xml to output\Zap Addon\ZapAddOn.xml
+2017-09-06 10:13:20,120 |  INFO | AddonGenerator.java | 298 | Directory output/Zap Addon/src/main/resources/help was created
+2017-09-06 10:13:20,121 |  INFO | AddonGenerator.java | 298 | Directory output/Zap Addon/src/main/resources/help/contents was created
+2017-09-06 10:13:20,122 |  INFO | AddonGenerator.java | 298 | Directory output/Zap Addon/src/main/resources/help/contents/images was created
+2017-09-06 10:13:20,132 |  INFO | AddonGenerator.java | 322 | The File Zap Addon.html was generated
+2017-09-06 10:13:20,181 |  INFO | AddonGenerator.java | 282 | Move File Zap Addon.html to output\Zap Addon\src\main\resources\help\contents\Zap Addon.html
+2017-09-06 10:13:20,187 |  INFO | AddonGenerator.java | 322 | The File map.jhm was generated
+2017-09-06 10:13:20,195 |  INFO | AddonGenerator.java | 282 | Move File map.jhm to output\Zap Addon\src\main\resources\help\map.jhm
+2017-09-06 10:13:20,212 |  INFO | AddonGenerator.java | 322 | The File helpset.hs was generated
+2017-09-06 10:13:20,217 |  INFO | AddonGenerator.java | 282 | Move File helpset.hs to output\Zap Addon\src\main\resources\help\helpset.hs
+2017-09-06 10:13:20,224 |  INFO | AddonGenerator.java | 322 | The File index.xml was generated
+2017-09-06 10:13:20,233 |  INFO | AddonGenerator.java | 282 | Move File index.xml to output\Zap Addon\src\main\resources\help\index.xml
+2017-09-06 10:13:20,246 |  INFO | AddonGenerator.java | 322 | The File toc.xml was generated
+2017-09-06 10:13:20,252 |  INFO | AddonGenerator.java | 282 | Move File toc.xml to output\Zap Addon\src\main\resources\help\toc.xml
+2017-09-06 10:13:20,269 |  INFO | AddonGenerator.java | 282 | Move File cake.png to output\Zap Addon\src\main\resources\help\contents\images\cake.png
+2017-09-06 10:13:20,277 |  INFO | AddonGenerator.java | 336 | Build Tool File build.gradle was generated
+2017-09-06 10:13:20,281 |  INFO | AddonGenerator.java | 282 | Move File build.gradle to output\Zap Addon\build.gradle

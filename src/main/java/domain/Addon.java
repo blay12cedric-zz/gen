@@ -140,7 +140,7 @@ public class Addon {
         this.buildTool = buildTool;
     }
 
-    private void setClassName(String className) {
+    public void setClassName(String className) {
         this.className = className;
     }
 

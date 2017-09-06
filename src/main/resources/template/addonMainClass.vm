@@ -22,10 +22,10 @@ import org.parosproxy.paros.Constant;
 import org.parosproxy.paros.extension.ExtensionAdaptor;
 import org.parosproxy.paros.extension.ExtensionHook;
 
-public class ${name} extends ExtensionAdaptor {
+public class ${pack} extends ExtensionAdaptor {
 
     // The name is public so that other extensions can access it
-    public static final String NAME = "${name}";
+    public static final String NAME = "${pack}";
 
     // The i18n prefix, by default the package name - defined in one place to make it easier
     // to copy and change this example
@@ -33,9 +33,9 @@ public class ${name} extends ExtensionAdaptor {
 
     private static final String RESOURCE = "/org/zaproxy/zap/extension/${pack}/resources";
 
-    private static final Logger LOGGER = Logger.getLogger(${name}.class);
+    private static final Logger LOGGER = Logger.getLogger(${pack}.class);
 
-    public ${name}() {
+    public ${pack}() {
         super(NAME);
     }
 
