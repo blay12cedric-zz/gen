@@ -8,7 +8,8 @@ public enum  FileType {
     HS_FILE_EXTENSION("hs"),
     HTML_FILE_EXTENSION("html"),
     PNG_FILE_EXTENSION("png"),
-    GRADLE_FILE_EXTENSION("gradle");
+    GRADLE_FILE_EXTENSION("gradle"),
+    JAR_FILE_EXTENSION("jar");
 
     private String fileExtension;
 
