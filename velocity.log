@@ -552,3 +552,127 @@ automatically reload global library macros
 2017-09-09 10:29:55,160 - ResourceManager : found src/main/resources/template/index.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
 2017-09-09 10:29:55,169 - ResourceManager : found src/main/resources/template/toc.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
 2017-09-09 10:29:55,169 - ResourceManager : found src/main/resources/template/toc.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2017-09-09 10:45:46,230 - Log4JLogChute initialized using file 'velocity.log'
+2017-09-09 10:45:46,230 - Initializing Velocity, Calling init()...
+2017-09-09 10:45:46,230 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2017-09-09 10:45:46,230 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2017-09-09 10:45:46,230 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2017-09-09 10:45:46,230 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2017-09-09 10:45:46,231 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2017-09-09 10:45:46,231 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2017-09-09 10:45:46,241 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2017-09-09 10:45:46,243 - Do unicode file recognition:  false
+2017-09-09 10:45:46,244 - FileResourceLoader : adding path '.'
+2017-09-09 10:45:46,257 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2017-09-09 10:45:46,258 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2017-09-09 10:45:46,260 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2017-09-09 10:45:46,261 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2017-09-09 10:45:46,262 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2017-09-09 10:45:46,263 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2017-09-09 10:45:46,264 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2017-09-09 10:45:46,266 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2017-09-09 10:45:46,267 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2017-09-09 10:45:46,268 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2017-09-09 10:45:46,303 - Created '20' parsers.
+2017-09-09 10:45:46,312 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2017-09-09 10:45:46,312 - Velocimacro : Default library not found.
+2017-09-09 10:45:46,312 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2017-09-09 10:45:46,312 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2017-09-09 10:45:46,312 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2017-09-09 10:45:46,312 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2017-09-09 10:45:46,387 - Log4JLogChute initialized using file 'velocity.log'
+2017-09-09 10:45:46,387 - Log4JLogChute initialized using file 'velocity.log'
+2017-09-09 10:45:46,387 - Initializing Velocity, Calling init()...
+2017-09-09 10:45:46,387 - Initializing Velocity, Calling init()...
+2017-09-09 10:45:46,387 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2017-09-09 10:45:46,387 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2017-09-09 10:45:46,387 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2017-09-09 10:45:46,387 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2017-09-09 10:45:46,387 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2017-09-09 10:45:46,387 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2017-09-09 10:45:46,387 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2017-09-09 10:45:46,387 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2017-09-09 10:45:46,387 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2017-09-09 10:45:46,387 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2017-09-09 10:45:46,387 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2017-09-09 10:45:46,387 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2017-09-09 10:45:46,387 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2017-09-09 10:45:46,387 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2017-09-09 10:45:46,387 - Do unicode file recognition:  false
+2017-09-09 10:45:46,387 - Do unicode file recognition:  false
+2017-09-09 10:45:46,387 - FileResourceLoader : adding path '.'
+2017-09-09 10:45:46,387 - FileResourceLoader : adding path '.'
+2017-09-09 10:45:46,388 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2017-09-09 10:45:46,388 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2017-09-09 10:45:46,388 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2017-09-09 10:45:46,388 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2017-09-09 10:45:46,389 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2017-09-09 10:45:46,389 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2017-09-09 10:45:46,389 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2017-09-09 10:45:46,389 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2017-09-09 10:45:46,389 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2017-09-09 10:45:46,389 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2017-09-09 10:45:46,389 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2017-09-09 10:45:46,389 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2017-09-09 10:45:46,389 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2017-09-09 10:45:46,389 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2017-09-09 10:45:46,389 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2017-09-09 10:45:46,389 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2017-09-09 10:45:46,389 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2017-09-09 10:45:46,389 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2017-09-09 10:45:46,389 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2017-09-09 10:45:46,389 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2017-09-09 10:45:46,391 - Created '20' parsers.
+2017-09-09 10:45:46,391 - Created '20' parsers.
+2017-09-09 10:45:46,391 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2017-09-09 10:45:46,391 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2017-09-09 10:45:46,391 - Velocimacro : Default library not found.
+2017-09-09 10:45:46,391 - Velocimacro : Default library not found.
+2017-09-09 10:45:46,391 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2017-09-09 10:45:46,391 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2017-09-09 10:45:46,391 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2017-09-09 10:45:46,391 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2017-09-09 10:45:46,391 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2017-09-09 10:45:46,391 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2017-09-09 10:45:46,391 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2017-09-09 10:45:46,391 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2017-09-09 10:45:46,404 - ResourceManager : found src/main/resources/template/addonMainClass.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2017-09-09 10:45:46,404 - ResourceManager : found src/main/resources/template/addonMainClass.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2017-09-09 10:45:46,413 - ResourceManager : found src/main/resources/template/zapAddonDescFile.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2017-09-09 10:45:46,413 - ResourceManager : found src/main/resources/template/zapAddonDescFile.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2017-09-09 10:45:46,427 - ResourceManager : found src/main/resources/buildToolTemplate/ant/build.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2017-09-09 10:45:46,427 - ResourceManager : found src/main/resources/buildToolTemplate/ant/build.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2017-09-09 10:45:46,430 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 22, column 41] : ${basedir} cannot be resolved.
+2017-09-09 10:45:46,430 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 22, column 41] : ${basedir} cannot be resolved.
+2017-09-09 10:45:46,430 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 23, column 42] : ${ivy.jar.dir} cannot be resolved.
+2017-09-09 10:45:46,430 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 23, column 42] : ${ivy.jar.dir} cannot be resolved.
+2017-09-09 10:45:46,431 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 31, column 21] : ${ivy.jar.dir} cannot be resolved.
+2017-09-09 10:45:46,431 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 31, column 21] : ${ivy.jar.dir} cannot be resolved.
+2017-09-09 10:45:46,431 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 33, column 69] : ${ivy.install.version} cannot be resolved.
+2017-09-09 10:45:46,431 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 33, column 69] : ${ivy.install.version} cannot be resolved.
+2017-09-09 10:45:46,431 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 33, column 96] : ${ivy.install.version} cannot be resolved.
+2017-09-09 10:45:46,431 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 33, column 96] : ${ivy.install.version} cannot be resolved.
+2017-09-09 10:45:46,431 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 34, column 20] : ${ivy.jar.file} cannot be resolved.
+2017-09-09 10:45:46,431 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 34, column 20] : ${ivy.jar.file} cannot be resolved.
+2017-09-09 10:45:46,431 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 42, column 27] : ${ivy.jar.dir} cannot be resolved.
+2017-09-09 10:45:46,431 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 42, column 27] : ${ivy.jar.dir} cannot be resolved.
+2017-09-09 10:45:46,431 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 53, column 21] : ${build.dir} cannot be resolved.
+2017-09-09 10:45:46,431 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 53, column 21] : ${build.dir} cannot be resolved.
+2017-09-09 10:45:46,431 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 54, column 24] : ${src.dir} cannot be resolved.
+2017-09-09 10:45:46,431 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 54, column 24] : ${src.dir} cannot be resolved.
+2017-09-09 10:45:46,431 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 54, column 45] : ${build.dir} cannot be resolved.
+2017-09-09 10:45:46,431 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 54, column 45] : ${build.dir} cannot be resolved.
+2017-09-09 10:45:46,431 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 62, column 27] : ${build.dir} cannot be resolved.
+2017-09-09 10:45:46,431 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 62, column 27] : ${build.dir} cannot be resolved.
+2017-09-09 10:45:46,431 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 70, column 22] : ${ivy.jar.dir} cannot be resolved.
+2017-09-09 10:45:46,431 - Null reference [template 'src/main/resources/buildToolTemplate/ant/build.vm', line 70, column 22] : ${ivy.jar.dir} cannot be resolved.
+2017-09-09 10:45:46,447 - ResourceManager : found src/main/resources/template/addonPage.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2017-09-09 10:45:46,447 - ResourceManager : found src/main/resources/template/addonPage.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2017-09-09 10:45:46,458 - ResourceManager : found src/main/resources/template/mapFile.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2017-09-09 10:45:46,458 - ResourceManager : found src/main/resources/template/mapFile.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2017-09-09 10:45:46,467 - ResourceManager : found src/main/resources/template/helpset.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2017-09-09 10:45:46,467 - ResourceManager : found src/main/resources/template/helpset.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2017-09-09 10:45:46,476 - ResourceManager : found src/main/resources/template/index.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2017-09-09 10:45:46,476 - ResourceManager : found src/main/resources/template/index.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2017-09-09 10:45:46,487 - ResourceManager : found src/main/resources/template/toc.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2017-09-09 10:45:46,487 - ResourceManager : found src/main/resources/template/toc.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader

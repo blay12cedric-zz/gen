@@ -283,7 +283,7 @@ public class AddonGenerator {
         outputStream.close();
 
         //Delete the original file...
-        if (!fileExtension.equals("png"))
+        if (!fileExtension.equals("png") && !fileExtension.equals("jar"))
             file1.delete();
 
         LOGGER.log(Level.INFO, "Move File " + file1 + " to " + file2);

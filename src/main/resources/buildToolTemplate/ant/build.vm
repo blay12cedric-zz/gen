@@ -1,79 +1,165 @@
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-   or more contributor license agreements.  See the NOTICE file
-   distributed with this work for additional information
-   regarding copyright ownership.  The ASF licenses this file
-   to you under the Apache License, Version 2.0 (the
-   "License"); you may not use this file except in compliance
-   with the License.  You may obtain a copy of the License at
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="${pack}" default="build-deploy" basedir=".">
 
-     http://www.apache.org/licenses/LICENSE-2.0
+    <property name="projectName" value="${pack}"/>
+    <property name="src.dir" location="src"/>
+    <property name="resources.dir" location="resources"/>
+    <property name="files.dir" location="files"/>
+    <property name="temp" location="temp"/>
+    <property name="lib.dir" location="lib"/>
+    <property name="build.lib.dir" location="../lib"
+    <property name="build.dir" location="bin"/>
+    <property name="dist.dir" location="dist"/>
+    <property name="zap.plugin.dir" location="../../zaproxy/src/plugin"/>
+    <property name="deploy.dir" location="../deploy"/>
+    <property name="zap.download.url" value="https://github.com/zaproxy/zap-extensions/releases/download/2.6" />
 
-   Unless required by applicable law or agreed to in writing,
-   software distributed under the License is distributed on an
-   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-   KIND, either express or implied.  See the License for the
-   specific language governing permissions and limitations
-   under the License.
--->
-<project xmlns:ivy="antlib:org.apache.ivy.ant" name="${pack}"  default="go">
+##    <property name="wiki.dir" location="../../zap-extensions-wiki"/>
+##    <property name="wiki.zapcorehelp.dir" location="../../zap-core-help-wiki"/>
+##
+##    <!-- Ant task to generate the wiki -->
+##    <taskdef classpathref="build.classpath" resource="wikitasks.properties" />
+##
+##    <!-- Ant task to generate JavaHelp search indexes -->
+##    <taskdef classpathref="build.classpath" resource="javahelptasks.properties" />
+##
+##    <macrodef name="generate-wiki" description="Generates the wiki of an add-on into zap-extensions wiki dir">
+##        <attribute name="addOn"/>
+##        <sequential>
+##            <generate-wiki-impl addon="@{addOn}" basedestdir="${wiki.dir}"
+##                                prefixlinkimages="https://github.com/zaproxy/zap-extensions/wiki/images/" tocpadding="0"/>
+##        </sequential>
+##    </macrodef>
 
-    <property name="ivy.install.version" value="2.4.0"/>
-    <property name="ivy.jar.dir" value="${basedir}/ivy"/>
-    <property name="ivy.jar.file" value="${ivy.jar.dir}/ivy.jar"/>
-    <property name="build.dir" value="build"/>
-    <property name="src.dir" value="src"/>
-    <property name="resources.dir" value="resources"/>
-    <property name="files.dir" value=files"/>
-
-
-    <target name="download-ivy" unless="skip.download">
-        <mkdir dir="${ivy.jar.dir}"/>
-        <echo message="Download ivy..."/>
-        <get src="https://repo1.maven.org/maven2/org/apache/ivy/ivy/${ivy.install.version}/ivy-${ivy.install.version}.jar"
-             dest="${ivy.jar.file}" usetimestamp="true"/>
+    <target name="compile" depends="init" description="compile the source">
+        <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" debug="true" encoding="UTF-8"
+               excludes="files/**,resources/**">
+            <compilerarg value="-Xlint:all"/>
+            <compilerarg value="-Xlint:-path"/>
+            <compilerarg value="-Xlint:-options"/>
+            <compilerarg value="-Werror"/>
+            <classpath>
+                <fileset dir="${lib.dir}">
+                    <include name="**/*.jar" />
+                </fileset>
+            </classpath>
+        </javac>
     </target>
 
-    <!-- =================================
-              target: install-ivy
-     ================================= -->
-    <target name="install-ivy" depends="download-ivy" description="install ivy">
-        <path id="ivy.lib.path">
-            <fileset dir="${ivy.jar.dir}" includes="*.jar"/>
-        </path>
-        <taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>
+    <macrodef name="build-addon" description="build the specified addon">
+        <attribute name="name"/>
+        <element name="extra-actions" implicit="true" optional="true"/>
+        <sequential>
+            <local name="zapaddon.version"/>
+            <xmlproperty file="ZapAddOn.xml"/>
+            <local name="zapaddon.status" />
+            <xmlproperty file="ZapAddOn.xml"/>
+            <local name="file" />
+            <property name="file" value="@{name}-${zapaddon.status}-${zapaddon.version}.zap"/>
+
+            <generatejavahelpsearchindexes jhalljar="${build.lib.dir}/jhall.jar"
+                                           helpcontentsdirname="contents" helpsetfilename="helpset*.hs">
+                <dirset dir="resources/">
+                    <include name="help" />
+                    <include name="help_*_*" />
+                </dirset>
+            </generatejavahelpsearchindexes>
+
+            <local name="addon.libs.zip" />
+            <property name="addon.libs.zip" value="${temp}/libs-@{name}.zip" />
+
+            <delete file="${addon.libs.zip}" failonerror="true" />
+            <zip destfile="${addon.libs.zip}" whenempty="create">
+                <zipgroupfileset dir="lib/" includes="*.jar" erroronmissingdir="false" />
+            </zip>
+
+            <jar jarfile="${dist.dir}/${file}" update="true" compress="true">
+                <zipfileset dir="${build.dir}" prefix="">
+                    <include name="/**"/>
+                </zipfileset>
+                <zipfileset dir="${src.dir}" prefix="">
+                    <include name="Messages*"/>
+                </zipfileset>
+                <zipfileset dir="${src.dir}" prefix="">
+                    <include name="resources/**"/>
+                </zipfileset>
+                <zipfileset src="${addon.libs.zip}">
+                    <exclude name="META-INF/*.DSA" />
+                    <exclude name="META-INF/*.SF" />
+                </zipfileset>
+                <zipfileset dir="${src.dir}" includes="ZapAddOn.xml" fullpath="ZapAddOn.xml"/>
+            </jar>
+            <delete file="${addon.libs.zip}" />
+
+            <!-- Remove search indexes previously generated, no longer needed. -->
+            <delete includeemptydirs="true" failonerror="false">
+                <fileset dir="resources/">
+                    <include name="help/JavaHelpSearch/**" />
+                    <include name="help_*_*/JavaHelpSearch/**" />
+                </fileset>
+            </delete>
+
+            <!-- Include add-on files -->
+            <jar jarfile="${dist.dir}/${file}" update="true" compress="true">
+                <zipfileset dir="files/" prefix="" erroronmissingdir="false" />
+            </jar>
+
+            <local name="length" />
+            <length file="${dist.dir}/${file}" property="length" />
+
+            <local name="sha1hash" />
+            <checksum file="${dist.dir}/${file}"  algorithm="SHA-1"  property="sha1hash"/>
+
+            <local name="hash" />
+            <property name="hash"  value="SHA1:${sha1hash}"/>
+
+            <local name="yyyymmdd" />
+            <tstamp>
+                <format property="yyyymmdd" pattern="yyyy-MM-dd"/>
+            </tstamp>
+
+            <appendzapaddonfile from="ZapAddOn.xml" to="${versions.file}" addonid="@{name}" filename="${file}"
+                                status="${zapaddon.status}" size="${length}" hash="${hash}" date="${yyyymmdd}"
+                                url="${zap.download.url}/${file}"/>
+        </sequential>
+    </macrodef>
+
+    <macrodef name="deploy-addon" description="deploy the specified extension">
+        <attribute name="name"/>
+        <sequential>
+            <copy todir="${zap.plugin.dir}, ${deploy.dir}">
+                <fileset dir="${dist.dir}">
+                    <include name="@{name}-*.zap"/>
+                </fileset>
+            </copy>
+        </sequential>
+    </macrodef>
+
+    <macrodef name="build-deploy-addon" description="build and deploy the specified addon">
+        <attribute name="name"/>
+        <sequential>
+            <antcall target="clean"/>
+            <antcall target="compile"/>
+
+            <build-addon name="@{name}"/>
+            <deploy-addon name="@{name}"/>
+        </sequential>
+    </macrodef>
+
+    <target name="clean" description="clean up build and deploy directories">
+        <delete dir="${build.dir}" includeEmptyDirs="true"/>
+        <delete dir="${deploy.dir}" includeEmptyDirs="true"/>
+        <delete dir="${dist.dir}" includeEmptyDirs="true"/>
     </target>
 
-    <!-- =================================
-              target: go, Go ivy, go!
-     ================================= -->
-    <target name="go" depends="clean, install-ivy" description="Resolve dependencies, compile and run the project">
-        <ivy:cachepath organisation=org.zaproxy" module="zap" revision="2.6.0" pathid="lib.path.id" inline="true"/>
-        <echo message="compiling..."/>
+    <target name="init" description="Create build and deploy directories">
         <mkdir dir="${build.dir}"/>
-        <javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="lib.path.id"/>
+        <mkdir dir="${deploy.dir}"/>
+        <mkdir dir="${dist.dir}"/>
     </target>
 
-    <!-- =================================
-              target: clean
-     ================================= -->
-    <target name="clean" depends="clean-ivy" description="Clean the project">
-        <delete includeemptydirs="true" quiet="true">
-            <fileset dir="${build.dir}"/>
-        </delete>
+    <target name="build-deploy" depends="clean, compile" description="Build and deploy the Addon generate">
+        <build-deploy-addon name="${pack}" />
     </target>
 
-    <!-- =================================
-              target: clean-ivy
-     ================================= -->
-    <target name="clean-ivy" description="Clean the ivy installation">
-        <delete dir="${ivy.jar.dir}"/>
-    </target>
-
-    <!-- =================================
-              target: clean-cache
-     ================================= -->
-    <target name="clean-cache" depends="install-ivy" description="Clean the ivy cache">
-        <ivy:cleancache/>
-    </target>
 </project>
