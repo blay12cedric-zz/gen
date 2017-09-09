@@ -4,7 +4,7 @@ public enum BuildTools {
 
     GRADLE(1, "src/main/java", "/src/main/resources", "src/main/resources/buildToolTemplate/gradle/"),
     MAVEN(2, "src/main/java", "/src/main/resources", "src/main/resources/buildToolTemplate/maven/"),
-    ANTIVY(3, "src", "resources", "src/main/resources/buildToolTemplate/antIvy/"),
+    ANT(3, "src", "resources", "src/main/resources/buildToolTemplate/ant/"),
     DEFAULT(0, "src", "resources", "src/main/resources/template/");
 
     private int id;

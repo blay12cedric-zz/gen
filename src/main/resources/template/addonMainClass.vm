@@ -16,16 +16,17 @@
 * limitations under the License.
 */
 
+
 package org.zaproxy.zap.extension.${pack};
 import org.apache.log4j.Logger;
 import org.parosproxy.paros.Constant;
 import org.parosproxy.paros.extension.ExtensionAdaptor;
 import org.parosproxy.paros.extension.ExtensionHook;
 
-public class ${pack} extends ExtensionAdaptor {
+public class ${class} extends ExtensionAdaptor {
 
     // The name is public so that other extensions can access it
-    public static final String NAME = "${pack}";
+    public static final String NAME = "${class}";
 
     // The i18n prefix, by default the package name - defined in one place to make it easier
     // to copy and change this example
@@ -33,9 +34,9 @@ public class ${pack} extends ExtensionAdaptor {
 
     private static final String RESOURCE = "/org/zaproxy/zap/extension/${pack}/resources";
 
-    private static final Logger LOGGER = Logger.getLogger(${pack}.class);
+    private static final Logger LOGGER = Logger.getLogger(${class}.class);
 
-    public ${pack}() {
+    public ${class}() {
         super(NAME);
     }
 

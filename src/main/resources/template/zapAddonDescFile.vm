@@ -9,7 +9,7 @@
     <changes/>
 
     <extensions>
-        <extension>org.zaproxy.zap.extension.${pack}.${pack}</extension>
+        <extension>org.zaproxy.zap.extension.${pack}.${class}</extension>
     </extensions>
 
     <ascanrules/>

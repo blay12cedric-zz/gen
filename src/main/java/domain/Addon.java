@@ -197,7 +197,7 @@ public class Addon {
                 break;
 
             case 3:
-                tools = BuildTools.ANTIVY;
+                tools = BuildTools.ANT;
                 break;
 
             default:
