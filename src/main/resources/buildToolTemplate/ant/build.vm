@@ -55,7 +55,7 @@
             <local name="zapaddon.status" />
             <xmlproperty file="ZapAddOn.xml"/>
             <local name="file" />
-            <property name="file" value="@{name}-${zapaddon.status}-${zapaddon.version}.zap"/>
+            <property name="file" value="${pack}-${zapaddon.status}-${zapaddon.version}.zap"/>
 
             <generatejavahelpsearchindexes jhalljar="${build.lib.dir}/jhall.jar"
                                            helpcontentsdirname="contents" helpsetfilename="helpset*.hs">

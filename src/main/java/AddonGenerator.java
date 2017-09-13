@@ -381,7 +381,11 @@ public class AddonGenerator {
 
         //Verify the Properties domain.Addon.name and domain.Addon.nbversion....
         if (properties.getProperty("addon.name").length() != 0 && properties.getProperty("addon.nbversion").length() != 0
-                && !(formatAndVerifyAddonName(properties.getProperty("addon.name")).length() <= 0)) {
+                && !(formatAndVerifyAddonName(properties.getProperty("addon.name")).length() <= 0) &&
+                !properties.getProperty("addon.name").equalsIgnoreCase("deploy") &&
+                !properties.getProperty("addon.name").equalsIgnoreCase("lib") &&
+                !properties.getProperty("addon.name").equalsIgnoreCase("zaproxy") &&
+                !properties.getProperty("addon.name").equalsIgnoreCase("output")) {
 
             addon = new Addon();
 
@@ -446,11 +450,14 @@ public class AddonGenerator {
             return addon;
         }
 
-        LOGGER.log(Level.FATAL, "Verify if you fill generator.properties or verify if " +
-                        "your Addon.name does not contain a special Character",
+        LOGGER.log(Level.FATAL, "Verify if you fill generator.properties, verify if " +
+                        "your Addon.name does not contain a special Character or verify if" +
+                        "your addon name is NOT deploy, zaproxy, lib or output(They are already used).",
                 new NullPointerException(Addon.class.getName()));
 
-        return addon;
+        throw new NullPointerException("Verify if you fill generator.properties, verify if\n" +
+                "your Addon.name does not contain a special Character or verify if\n" +
+                "your addon name is NOT deploy, zaproxy, lib or output(They are already used).");
     }
 
     /**
