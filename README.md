@@ -10,7 +10,7 @@ with/without build tool files (Maven, Ant, Gradle).
 First, you need to pull the Zap Gen repo.
 Now you can see the Zap Gen project structure:
 
-![alt text](https://raw.githubusercontent.com/blay12cedric/gen/master/path/to/gen_image.png)
+![Screenshot](gen_image.png)
 
 1 - is the folder "output/"
 2 - is the file generator.properties
@@ -38,7 +38,7 @@ This file is important to generate your Addon, so pay attention to the descripti
 
 #### Description - Addon informations Section
 
-![alt text](https://raw.githubusercontent.com/blay12cedric/gen/master/path/to/addon_info.png)
+![Screenshot](addon_info.png)
 
 * addon.name: your addon name
 * addon.description: your addon description
@@ -50,7 +50,7 @@ This file is important to generate your Addon, so pay attention to the descripti
 
 #### Description - Other files and Lib Section
 
-![alt text](https://raw.githubusercontent.com/blay12cedric/gen/master/path/to/addon_lib.png)
+![Screenshot](addon_lib.png)
 
 * addon.uselib: Use libraries
 * addon.file.other: Use other files
@@ -59,7 +59,7 @@ This file is important to generate your Addon, so pay attention to the descripti
 
 #### Description - Build Tool Section
 
-![alt text](https://raw.githubusercontent.com/blay12cedric/gen/master/path/to/addon_build.png)
+![Screenshot](addon_build.png)
 
 * addon.build.tool: Choose your build tool
 
